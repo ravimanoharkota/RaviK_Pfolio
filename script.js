@@ -181,13 +181,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Re-initialize the typing effect after restoring the content
         new Typed('#text', {
-            strings: ["Ravi Manohar K", "an Embedded Systems, Linux Kernel, Wireless and Connectivity Software Developer"],
-            loop: true,
-            typeSpeed: 200,
-            backSpeed: 50,
-            backDelay: 1000
+           strings: [" , an Embedded Systems, Linux Kernel, Wireless, Connectivity Software Developer"],
+           loop: true,
+           typeSpeed: 20,
+           backSpeed: 10,
+           backDelay: 3000,
+           smartBackspace: false
         });
-
+        
         // Re-initialize modal functionality after restoring content
         initializeModal();
     });
