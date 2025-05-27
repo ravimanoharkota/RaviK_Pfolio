@@ -21,10 +21,14 @@ function openInNewTab() {
     window.open('https://github.com/ravimanoharkota', '_blank');
 }
 
+ 
 // Content switch for Home and About
 document.addEventListener('DOMContentLoaded', function () {
     const homeTab = document.getElementById('homeTab'); // Add a home tab in your HTML if needed
     const aboutTab = document.getElementById('aboutTab');
+    const contributionsTab = document.getElementById('contributionsTab');
+
+
     const content = document.getElementById('mainContent');
 
     // Save the initial home content for later restoration
@@ -166,6 +170,32 @@ document.addEventListener('DOMContentLoaded', function () {
         // Re-initialize modal functionality after content change
         initializeModal();
     });
+
+
+
+    contributionsTab.addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Update page title
+    document.title = "Embedded YouTube Video";
+
+    // Replace content with the Contributions section
+    content.innerHTML = `
+        <div class="contributions-section">
+            <h2>5G Wireless, NR Sidelink Intro Session </h4>
+            <h4>  Embedded YouTube Video </h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+                <iframe 
+                    src="https://www.youtube.com/embed/xS5dX2BcPpM" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                </iframe>
+            </div>
+        </div>
+    `;
+});
 
     // Event listener for Home tab to restore the initial home content
     homeTab.addEventListener('click', function (event) {
